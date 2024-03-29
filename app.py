@@ -1,5 +1,7 @@
-print("""
-        
+import os
+
+def exibit_nome_do_programa(): 
+    print("""   
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
 ╚█████╗░███████║██████╦╝██║░░██║██████╔╝  █████╗░░░╚███╔╝░██████╔╝██████╔╝█████╗░░╚█████╗░╚█████╗░
@@ -8,17 +10,34 @@ print("""
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░
 """)
 
-print('1. Cadastrar restaurante')
-print('2. Listar restaurante')
-print('3. Ativar restaurante')
-print('4. Sair\n')
+def exibir_opcoes():
+    print('1. Cadastrar restaurante')
+    print('2. Listar restaurante')
+    print('3. Ativar restaurante')
+    print('4. Sair\n')
 
-opcao_escolhida = input('Escolha uma opção: ')
-print(f'Você escolheu a opção {opcao_escolhida}')
 
-if opcao_escolhida == 1:
-    print('Casdastrar restaurante')
-elif opcao_escolhida == 2:
-    print('Listar restaurantes')
-elif opcao_escolhida == 3:
-    print('Ativar restaurante')
+def finalizar_app():
+    os.system('cls')
+    print("finalizando o app\n")
+
+def escolher_opcao():
+    opcao_escolhida = int(input('Escolha uma opção: '))
+
+    if opcao_escolhida == 1:
+        print('Casdastrar restaurante')
+    elif opcao_escolhida == 2:
+        print('Listar restaurantes')
+    elif opcao_escolhida == 3:
+        print('Ativar restaurante')
+    else : 
+        finalizar_app()
+
+def main() :
+    exibit_nome_do_programa()
+    exibir_opcoes()
+    escolher_opcao()
+
+
+if __name__ == '__main__':
+    main()
